@@ -1,0 +1,16 @@
+node_modules/
+.jspace/
+.pi/
+coverage/
+dist/
+*.tgz
+*.log
+.DS_Store
+.env
+.env.*
+auth.json
+models.json
+pi-ha.json
+*.local.json
+*.pem
+*.key

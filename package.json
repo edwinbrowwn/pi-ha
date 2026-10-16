@@ -1,0 +1,54 @@
+{
+  "name": "pi-ha",
+  "version": "0.2.0",
+  "description": "Pi High Availability: cached endpoint failover for native models via models.json.",
+  "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edwinbrowwn/pi-ha.git"
+  },
+  "homepage": "https://github.com/edwinbrowwn/pi-ha#readme",
+  "bugs": {
+    "url": "https://github.com/edwinbrowwn/pi-ha/issues"
+  },
+  "keywords": [
+    "pi-package",
+    "pi-extension",
+    "failover",
+    "high-availability",
+    "local-models",
+    "tailscale"
+  ],
+  "engines": {
+    "node": ">=22.19.0"
+  },
+  "pi": {
+    "extensions": [
+      "./index.ts"
+    ]
+  },
+  "files": [
+    "index.ts",
+    "src/",
+    "README.md",
+    "models.example.json"
+  ],
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "test:unit": "node --test tests/router.test.mjs tests/models-config.test.mjs tests/test-env.test.mjs",
+    "test:integration": "node --test tests/pi.test.mjs"
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": "*",
+    "@earendil-works/pi-ai": "*"
+  },
+  "peerDependenciesMeta": {
+    "@earendil-works/pi-coding-agent": {
+      "optional": true
+    },
+    "@earendil-works/pi-ai": {
+      "optional": true
+    }
+  }
+}

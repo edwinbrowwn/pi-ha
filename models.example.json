@@ -1,0 +1,32 @@
+{
+  "providers": {
+    "my-server": {
+      "baseUrl": "http://server.lan.example:8000/v1",
+      "api": "openai-completions",
+      "apiKey": "local",
+      "models": [
+        {
+          "id": "my-model",
+          "name": "My model",
+          "reasoning": false,
+          "contextWindow": 65536,
+          "maxTokens": 4096,
+          "input": ["text"],
+          "ha": {
+            "primaryLabel": "LAN",
+            "healthPath": "/health",
+            "probeTimeoutMs": 100,
+            "cacheTtlMs": 10000,
+            "fallbackUrls": [
+              {
+                "baseUrl": "http://server.remote.example:8000/v1",
+                "label": "Remote",
+                "timeoutMs": 1000
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
